@@ -22,15 +22,45 @@
             //Print messages for when...
 
             // 1 > 2
+            if (personOne > personTwo)
+            {
+                Console.WriteLine("Person 1 is older than person 2.");
+            }
+
             // 3 < 1
+            if (personThree < personOne)
+            {
+                Console.WriteLine("Person 3 is younger than person 1.");
+            }
+           
             // 2 == 3
+            if (personThree == personTwo)
+            {
+                Console.WriteLine("Person 2 and person 3 are the same age.");
+            }
+
             // 2 < 3 , 1
+            if (personTwo < personThree && personTwo < personOne)
+            {
+                Console.WriteLine("Person 2 is the youngest.");
+            }
+
             // 1 > 2,3
+            if (personOne > personTwo && personOne > personThree)
+            {
+                Console.WriteLine("Person 1 is the oldest.");
+            }
             // 2 == 1 or 2 == 3  but not both
-            // 1 != 2 or 3
-            // 1=2=3
-            //No one is the same
-            // Two people are but not all three
+            if (personTwo == personOne && personTwo != personThree || personTwo == personThree && personTwo != personOne)
+            {
+                Console.WriteLine("Person 2 is the same age as one other person.");
+            }
+          
+            // 1 != 2 or 3 No one is the same age as person 1
+
+            // 1=2=3 Everyone is the same age
+            //No one is the same --  Everyone is a different age
+            // Two people are but not all three -- Exactly 2 people are the same age, but not everyone
             
             
         }
