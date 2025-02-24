@@ -5,18 +5,31 @@
         static void Main(string[] args)
         {
             int personOne, personTwo, personThree;
+            
 
             // Read in the three ages
             Console.WriteLine("Hey there! Please give me three people's ages and I will tell you some facts about them!");
             Console.WriteLine("The first person's age is...");
-            Int32.TryParse(Console.ReadLine(), out personOne);
+            while (!Int32.TryParse(Console.ReadLine(), out personOne))
+            {
+                Console.WriteLine("That's not a number, try again.");
+            }
             Console.WriteLine();
+
             Console.WriteLine("The second person's age is...");
-            Int32.TryParse(Console.ReadLine(), out personTwo);
+            while (!Int32.TryParse(Console.ReadLine(), out personTwo))
+            {
+                Console.WriteLine("That's not a number, try again.");
+            }
             Console.WriteLine();
+
             Console.WriteLine("The third person's age is...");
-            Int32.TryParse(Console.ReadLine(), out personThree);
+            while (!Int32.TryParse(Console.ReadLine(), out personThree))
+            {
+                Console.WriteLine("That's not a number, try again.");
+            }
             Console.WriteLine();
+
             Console.WriteLine("Awesome, thanks! From what I can tell..");
 
             //Print messages for when...
@@ -56,11 +69,28 @@
                 Console.WriteLine("Person 2 is the same age as one other person.");
             }
           
-            // 1 != 2 or 3 No one is the same age as person 1
+            // 1 != 2 or 3 No one is the same age as person one
+            if (personOne != personTwo && personOne != personThree)
+            {
+                Console.WriteLine("No one is the same age as person 1.");
+            }
 
             // 1=2=3 Everyone is the same age
+            if (personOne == personTwo && personTwo == personThree)
+            {
+                Console.WriteLine("Everyone is the same age!");
+            }
+
             //No one is the same --  Everyone is a different age
+            if (personOne != personTwo && personTwo != personThree && personThree !=personOne)
+            {
+                Console.WriteLine("Everyone is a diiferent age!");
+            }
             // Two people are but not all three -- Exactly 2 people are the same age, but not everyone
+            if (personOne == personTwo && personOne !=personThree || personTwo == personThree && personTwo !=personOne || personThree == personOne && personOne != personTwo)
+            {
+                Console.WriteLine("Exactly 2 people are the same age, but not everyone.");
+            }
             
             
         }
